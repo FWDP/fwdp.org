@@ -1,10 +1,25 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
     <header>
       <nav>
-        <ul className="list-none m-0 p-16 text-white bg-fwdp-dark">
+        <ul className="list-none m-0 p-12 flex gap-8 items-center bg-primaryColor">
           <li>
-            <a href="#">Home</a>
+            <a href="#">
+              <Image
+                src={"/fwdpIcon.png"}
+                alt="FWDP logo"
+                width={50}
+                height={50}
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">Team</a>
+          </li>
+          <li>
+            <a href="#">About</a>
           </li>
         </ul>
       </nav>
