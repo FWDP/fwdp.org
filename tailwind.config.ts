@@ -1,26 +1,30 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-	content: [
-		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
-		'./components/**/*.{js,ts,jsx,tsx,mdx}',
-		'./app/**/*.{js,ts,jsx,tsx,mdx}',
-	],
-	theme: {
-		colors: {
-			primaryColor: '#f5e6e0',
-			secondaryColor: '#24296b',
-			white: '#FFFFFF',
-		},
-		extend: {
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-			},
-		},
-	},
-	plugins: [],
-
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    colors: {
+      primaryColor: '#f5e6e0',
+      secondaryColor: '#24296b',
+      white: '#FFFFFF',
+      // FWDP COLOR PALLETE
+      midnightBlue: '#0D1950',
+      shockingPink: '#ED1E79',
+      royalBlue: '#2828C4',
+      palePink: '#FB85D0',
+    },
+    extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
 };
 export default config;
