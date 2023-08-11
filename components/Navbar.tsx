@@ -21,6 +21,9 @@ export default function Navbar() {
           <li>
             <a href="#">About</a>
           </li>
+          <li>
+            <a href="#">Join Us</a>
+          </li>
         </ul>
       </nav>
     </header>
