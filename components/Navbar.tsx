@@ -15,7 +15,7 @@ export default function Navbar() {
               />
             </a>
           </li>
-          <li>
+          <li className="ml-auto">
             <a href="#">Team</a>
           </li>
           <li>
