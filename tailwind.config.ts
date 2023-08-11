@@ -11,7 +11,6 @@ const config: Config = {
 			primaryColor: '#f5e6e0',
 			secondaryColor: '#24296b',
 			white: '#FFFFFF',
-			fwdpDark: '#180026',
 		},
 		extend: {
 			backgroundImage: {
@@ -22,5 +21,6 @@ const config: Config = {
 		},
 	},
 	plugins: [],
+
 };
 export default config;
