@@ -1,11 +1,5 @@
+import SocialLinks from '@/components/SocialLinks';
 import Image from 'next/image';
-import { IoLogoGithub } from 'react-icons/io5';
-import {
-  PiDiscordLogoFill,
-  PiLinkedinLogoFill,
-  PiYoutubeLogoFill,
-} from 'react-icons/pi';
-import { TbBrandFacebookFilled } from 'react-icons/tb';
 
 export default function Home() {
   return (
@@ -28,23 +22,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div className='flex gap-2'>
-          <a href='#' className='cursor-pointer'>
-            <IoLogoGithub size={40} />
-          </a>
-          <a href='#' className='cursor-pointer'>
-            <PiDiscordLogoFill size={40} />
-          </a>
-          <a href='#' className='cursor-pointer'>
-            <PiLinkedinLogoFill size={40} />
-          </a>
-          <a href='#' className='cursor-pointer'>
-            <TbBrandFacebookFilled size={40} />
-          </a>
-          <a href='#' className='cursor-pointer'>
-            <PiYoutubeLogoFill size={40} />
-          </a>
-        </div>
+        <SocialLinks />
 
         <p className='mt-8 text-2xl'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
