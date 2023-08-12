@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className='flex min-h-screen w-full flex-row-reverse gap-8 bg-primaryColor px-8 py-6'>
       <div className='relative h-[750px] w-[55%]'>
-        <Image src={'/aso.jpg'} alt='aso' layout='fill' objectFit='cover' />
+        <Image src={'/aso.jpg'} alt='aso' fill className='object-cover' />
       </div>
 
       <div className='flex w-[45%] flex-col'>
