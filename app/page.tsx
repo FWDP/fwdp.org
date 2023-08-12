@@ -9,13 +9,13 @@ import { TbBrandFacebookFilled } from 'react-icons/tb';
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen w-full flex-row-reverse gap-8 bg-primaryColor px-8 py-6'>
-      <div className='relative h-[750px] w-[55%]'>
+    <main className='flex min-h-screen w-full flex-col gap-8 bg-primaryColor px-8 py-6 xl:flex-row-reverse'>
+      <div className='relative h-[200px] xl:h-[750px] xl:w-[55%]'>
         <Image src={'/aso.jpg'} alt='aso' fill className='object-cover' />
       </div>
 
-      <div className='flex w-[45%] flex-col'>
-        <div className='mt-16'>
+      <div className='flex flex-col xl:w-[45%]'>
+        <div className='mt-8 xl:mt-16'>
           <Image src={'/fwdpHero.png'} alt='aso' width={250} height={250} />
         </div>
 
