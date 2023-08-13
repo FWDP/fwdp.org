@@ -1,5 +1,5 @@
-'use client';
-
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 interface NavLink {
@@ -7,7 +7,7 @@ interface NavLink {
   routeName: string;
 }
 
-export default function LinkRoutes() {
+export default function LinkRoutes({ isMobile }: { isMobile: boolean }) {
   const router = useRouter(),
     pageLink = (route: NavLink['routeName']) => router.push(route);
 
@@ -19,7 +19,22 @@ export default function LinkRoutes() {
   ];
 
   return (
-    <>
+    <ul
+      className={`${
+        isMobile ? 'flex-col gap-6 pb-4' : 'h-20 gap-8'
+      } m-0 flex  list-none items-center justify-center text-xl`}
+    >
+      {!isMobile && (
+        <Link href='/' className='mr-auto'>
+          <Image
+            src={'/logo-horizontal.png'}
+            alt='FWDP logo'
+            width={190}
+            height={190}
+          />
+        </Link>
+      )}
+
       {navLinks.map((link) => {
         const isJoinUs = link.name === 'JOIN US';
         const bgColor = isJoinUs ? 'bg-shockingPink px-2 py-[0.45rem]' : '';
@@ -47,6 +62,6 @@ export default function LinkRoutes() {
           </li>
         );
       })}
-    </>
+    </ul>
   );
 }
