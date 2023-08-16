@@ -1,13 +1,32 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-interface NavLink {
-  name: string;
-  routeName: string;
+type NavLink = { name: string; routeName: string };
+
+export default function LinkRoutes({
+  toggleMenu,
+  toggleMenuNav,
+}: {
+  toggleMenu: boolean;
+  toggleMenuNav: () => void;
+}) {
+  return (
+    <>
+      {toggleMenu && (
+        <div className='absolute top-20 z-50 h-52 w-full bg-primaryColor md:hidden'>
+          <ul className='flex flex-col items-center justify-center gap-3 py-4 text-xl'>
+            <NavRoutes toggleMenuNav={toggleMenuNav} />
+          </ul>
+        </div>
+      )}
+
+      <ul className='ml-auto flex h-20 list-none items-center justify-center  gap-8 pr-8 text-xl max-md:hidden'>
+        <NavRoutes toggleMenuNav={toggleMenuNav} />
+      </ul>
+    </>
+  );
 }
 
-export default function LinkRoutes({ isMobile }: { isMobile: boolean }) {
+function NavRoutes({ toggleMenuNav }: { toggleMenuNav: () => void }) {
   const router = useRouter(),
     pageLink = (route: NavLink['routeName']) => router.push(route);
 
@@ -19,22 +38,7 @@ export default function LinkRoutes({ isMobile }: { isMobile: boolean }) {
   ];
 
   return (
-    <ul
-      className={`${
-        isMobile ? 'flex-col gap-6 pb-4' : 'h-20 gap-8'
-      } m-0 flex  list-none items-center justify-center text-xl`}
-    >
-      {!isMobile && (
-        <Link href='/' className='mr-auto'>
-          <Image
-            src={'/logo-horizontal.png'}
-            alt='FWDP logo'
-            width={190}
-            height={190}
-          />
-        </Link>
-      )}
-
+    <>
       {navLinks.map((link) => {
         const isJoinUs = link.name === 'JOIN US';
         const bgColor = isJoinUs ? 'bg-shockingPink px-2 py-[0.45rem]' : '';
@@ -53,6 +57,7 @@ export default function LinkRoutes({ isMobile }: { isMobile: boolean }) {
                 href={link.routeName}
                 target='_blank'
                 className={textColorClass}
+                onClick={() => toggleMenuNav()}
               >
                 {link.name}
               </a>
@@ -62,6 +67,6 @@ export default function LinkRoutes({ isMobile }: { isMobile: boolean }) {
           </li>
         );
       })}
-    </ul>
+    </>
   );
 }
