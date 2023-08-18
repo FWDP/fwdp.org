@@ -13,27 +13,35 @@ export default function Navbar() {
     toggleMenuNav = () => setToggleMenu(!toggleMenu);
 
   return (
-    <nav className='relative flex items-center bg-primaryColor max-md:py-5'>
-      <div className='flex px-8 max-md:w-full'>
-        <Link href='/' className='mr-auto '>
-          <Image
-            src={'/logo-horizontal.png'}
-            alt='FWDP logo'
-            width={190}
-            height={190}
-          />
-        </Link>
+    <nav className='sticky left-0 top-0 z-20 w-full shadow-md'>
+      <div className='items-center justify-between bg-white px-8 py-4 md:flex'>
+        {/* Logo Section */}
+        <div className='flex cursor-pointer items-center gap-1 text-2xl font-bold'>
+          <Link href='/'>
+            <Image
+              src={'/logo-horizontal.png'}
+              alt='FWDP logo'
+              width={190}
+              height={190}
+            />
+          </Link>
+        </div>
 
-        <div className='ml-auto flex cursor-pointer items-center  md:hidden'>
+        {/* Menu Icon */}
+        <div
+          className='absolute right-8 top-6 cursor-pointer md:hidden'
+          onClick={() => toggleMenuNav()}
+        >
           {!toggleMenu ? (
-            <RxHamburgerMenu size={32} onClick={() => toggleMenuNav()} />
+            <RxHamburgerMenu size={28} />
           ) : (
-            <IoCloseSharp size={40} onClick={() => toggleMenuNav()} />
+            <IoCloseSharp size={28} />
           )}
         </div>
-      </div>
 
-      <LinkRoutes toggleMenu={toggleMenu} toggleMenuNav={toggleMenuNav} />
+        {/* Routes */}
+        <LinkRoutes toggleMenu={toggleMenu} />
+      </div>
     </nav>
   );
 }

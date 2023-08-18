@@ -2,31 +2,7 @@ import { useRouter } from 'next/navigation';
 
 type NavLink = { name: string; routeName: string };
 
-export default function LinkRoutes({
-  toggleMenu,
-  toggleMenuNav,
-}: {
-  toggleMenu: boolean;
-  toggleMenuNav: () => void;
-}) {
-  return (
-    <>
-      {toggleMenu && (
-        <div className='absolute top-20 z-50 h-52 w-full bg-primaryColor md:hidden'>
-          <ul className='flex flex-col items-center justify-center gap-3 py-4 text-xl'>
-            <NavRoutes toggleMenuNav={toggleMenuNav} />
-          </ul>
-        </div>
-      )}
-
-      <ul className='ml-auto flex h-20 list-none items-center justify-center  gap-8 pr-8 text-xl max-md:hidden'>
-        <NavRoutes toggleMenuNav={toggleMenuNav} />
-      </ul>
-    </>
-  );
-}
-
-function NavRoutes({ toggleMenuNav }: { toggleMenuNav: () => void }) {
+export default function LinkRoutes({ toggleMenu }: { toggleMenu: boolean }) {
   const router = useRouter(),
     pageLink = (route: NavLink['routeName']) => router.push(route);
 
@@ -38,7 +14,11 @@ function NavRoutes({ toggleMenuNav }: { toggleMenuNav: () => void }) {
   ];
 
   return (
-    <>
+    <ul
+      className={`absolute left-0 z-[-1] flex w-full flex-col items-center justify-center gap-4 bg-white transition-all duration-[400ms] ease-in-out max-md:p-2 max-md:pb-6 md:static md:z-auto md:w-auto md:flex-row md:gap-6 ${
+        toggleMenu ? 'top-[74px]' : 'top-[-490px]'
+      }`}
+    >
       {navLinks.map((link) => {
         const isJoinUs = link.name === 'JOIN US';
         const bgColor = isJoinUs ? 'bg-shockingPink px-2 py-[0.45rem]' : '';
@@ -57,7 +37,6 @@ function NavRoutes({ toggleMenuNav }: { toggleMenuNav: () => void }) {
                 href={link.routeName}
                 target='_blank'
                 className={textColorClass}
-                onClick={() => toggleMenuNav()}
               >
                 {link.name}
               </a>
@@ -67,6 +46,6 @@ function NavRoutes({ toggleMenuNav }: { toggleMenuNav: () => void }) {
           </li>
         );
       })}
-    </>
+    </ul>
   );
 }

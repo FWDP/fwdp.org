@@ -20,11 +20,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type childrenProps = { children: React.ReactNode };
+
+export default function RootLayout({ children }: childrenProps) {
   return (
     <html lang='en'>
       <head>
