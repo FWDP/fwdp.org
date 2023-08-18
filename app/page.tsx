@@ -5,7 +5,7 @@ import Team from './team/page';
 export default function Home() {
   return (
     <main className='min-h-screen w-full bg-primaryColor p-8 '>
-      <section className='relative mx-8 flex  h-screen w-full items-baseline gap-8 max-sm:mx-2 sm:mx-4'>
+      <section className='relative mx-8 flex  w-full items-baseline gap-8 max-sm:mx-2 sm:mx-4'>
         <div className='flex flex-col xl:w-[50%]'>
           <div className=''>
             <Image src={'/fwdpHero.png'} alt='aso' width={250} height={250} />

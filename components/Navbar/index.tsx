@@ -27,11 +27,12 @@ export default function Navbar() {
         }`}
       >
         {/* Logo Section */}
-        <div className='flex cursor-pointer items-center gap-1 text-2xl font-bold'>
+        <div className='flex items-center gap-1 text-2xl font-bold'>
           <Link href='/'>
             <Image
               src={'/logo-horizontal.png'}
-              alt='FWDP logo'
+              loading='lazy'
+              alt='FWDP Logo'
               width={190}
               height={190}
             />
@@ -39,7 +40,7 @@ export default function Navbar() {
         </div>
 
         {/* Menu Icon */}
-        <div
+        <button
           className='absolute right-8 top-6 cursor-pointer md:hidden'
           onClick={() => toggleMenuNav()}
         >
@@ -48,7 +49,7 @@ export default function Navbar() {
           ) : (
             <IoCloseSharp size={28} />
           )}
-        </div>
+        </button>
 
         {/* Routes */}
         <LinkRoutes toggleMenu={toggleMenu} />
