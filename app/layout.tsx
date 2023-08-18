@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 import type { Metadata } from 'next';
 import { Tomorrow } from 'next/font/google';
 import './globals.css';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: childrenProps) {
       </head>
       <body className={tommorow.className}>
         <Navbar />
+        <ScrollToTopButton />
         {children}
       </body>
     </html>
