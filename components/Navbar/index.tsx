@@ -1,39 +1,59 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 import LinkRoutes from './LinkRoutes';
-import Link from 'next/link';
+import useSetTransparency from '@/hooks/useSetTransparency';
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false),
     toggleMenuNav = () => setToggleMenu(!toggleMenu);
 
+  const { isTransparent } = useSetTransparency();
+
   return (
-    <nav className='relative flex items-center bg-primaryColor max-md:py-5'>
-      <div className='flex px-8 max-md:w-full'>
-        <Link href='/' className='mr-auto '>
-          <Image
-            src={'/logo-horizontal.png'}
-            alt='FWDP logo'
-            width={190}
-            height={190}
-          />
-        </Link>
-
-        <div className='ml-auto flex cursor-pointer items-center  md:hidden'>
-          {!toggleMenu ? (
-            <RxHamburgerMenu size={32} onClick={() => toggleMenuNav()} />
-          ) : (
-            <IoCloseSharp size={40} onClick={() => toggleMenuNav()} />
-          )}
+    <nav
+      className={`sticky left-0 top-0 z-20 w-full transition-all duration-200 ease-in-out ${
+        !isTransparent && 'shadow-md'
+      }`}
+    >
+      <div
+        className={`items-center justify-between px-8 py-4 transition-all duration-200 ease-in-out md:flex ${
+          isTransparent ? 'bg-primaryColor' : 'bg-white'
+        }`}
+      >
+        {/* Logo Section */}
+        <div className='flex items-center gap-1 text-2xl font-bold'>
+          <Link href='/'>
+            <Image
+              src={'/logo-horizontal.png'}
+              loading='lazy'
+              alt='FWDP Logo'
+              width={190}
+              height={190}
+            />
+          </Link>
         </div>
-      </div>
 
-      <LinkRoutes toggleMenu={toggleMenu} toggleMenuNav={toggleMenuNav} />
+        {/* Menu Icon */}
+        <button
+          className='absolute right-8 top-6 cursor-pointer md:hidden'
+          onClick={() => toggleMenuNav()}
+        >
+          {!toggleMenu ? (
+            <RxHamburgerMenu size={28} />
+          ) : (
+            <IoCloseSharp size={28} />
+          )}
+        </button>
+
+        {/* Routes */}
+        <LinkRoutes toggleMenu={toggleMenu} />
+      </div>
     </nav>
   );
 }

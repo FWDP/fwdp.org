@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 import type { Metadata } from 'next';
 import { Tomorrow } from 'next/font/google';
 import './globals.css';
@@ -20,11 +21,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type childrenProps = { children: React.ReactNode };
+
+export default function RootLayout({ children }: childrenProps) {
   return (
     <html lang='en'>
       <head>
@@ -32,6 +31,7 @@ export default function RootLayout({
       </head>
       <body className={tommorow.className}>
         <Navbar />
+        <ScrollToTopButton />
         {children}
       </body>
     </html>
