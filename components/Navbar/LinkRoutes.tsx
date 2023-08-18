@@ -1,12 +1,13 @@
 import { useRouter } from 'next/navigation';
 
-type NavLink = { name: string; routeName: string };
+type NavLinkType = { name: string; routeName: string };
+type ToggleMenuType = { toggleMenu: boolean };
 
-export default function LinkRoutes({ toggleMenu }: { toggleMenu: boolean }) {
+export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
   const router = useRouter(),
-    pageLink = (route: NavLink['routeName']) => router.push(route);
+    pageLink = (route: NavLinkType['routeName']) => router.push(route);
 
-  const navLinks: NavLink[] = [
+  const navLinks: NavLinkType[] = [
     { name: 'TEAM', routeName: '/team' },
     { name: 'ABOUT', routeName: '/about' },
     { name: 'PROJECTS', routeName: '/projects' },
@@ -15,7 +16,7 @@ export default function LinkRoutes({ toggleMenu }: { toggleMenu: boolean }) {
 
   return (
     <ul
-      className={`absolute left-0 z-[-1] flex w-full flex-col items-center justify-center gap-4 bg-white transition-all duration-[400ms] ease-in-out max-md:p-2 max-md:pb-6 md:static md:z-auto md:w-auto md:flex-row md:gap-6 ${
+      className={`absolute left-0 z-[-1] flex w-full flex-col items-center justify-center gap-4 transition-all duration-[400ms] ease-in-out max-md:bg-primaryColor max-md:p-2 max-md:pb-6 md:static md:z-auto md:w-auto md:flex-row md:gap-6 ${
         toggleMenu ? 'top-[74px]' : 'top-[-490px]'
       }`}
     >
