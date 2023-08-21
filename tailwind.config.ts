@@ -30,6 +30,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      spacing: {
+        'offset-vw': 'calc(-40rem + 22vw)',
+      },
+      boxShadow: {
+        'midnightBlue-shadow': '5px 6px 0 1px #0D1950',
+      },
     },
   },
   plugins: [],
