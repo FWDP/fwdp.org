@@ -1,12 +1,10 @@
-'use client';
-
 import { IoLogoGithub } from 'react-icons/io5';
+import { TbBrandFacebookFilled } from 'react-icons/tb';
 import {
   PiDiscordLogoFill,
   PiLinkedinLogoFill,
   PiYoutubeLogoFill,
 } from 'react-icons/pi';
-import { TbBrandFacebookFilled } from 'react-icons/tb';
 
 const socialLink = [
   { link: 'https://github.com/FWDP', icon: <IoLogoGithub size={40} /> },
