@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
+import { animateScroll } from 'react-scroll';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
 const ScrollToTopButton = () => {
@@ -17,7 +17,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   const scrollToTop = () => {
-    scroll.scrollToTop({
+    animateScroll.scrollToTop({
       duration: 400,
       smooth: 'easeInOutQuart',
     });
@@ -25,7 +25,7 @@ const ScrollToTopButton = () => {
 
   return (
     <div
-      className={`fixed bottom-10 right-10 z-50 cursor-pointer rounded-full bg-shockingPink p-2 text-white  ${
+      className={`fixed bottom-10 right-10 z-50 cursor-pointer rounded-full bg-shockingPink p-2 text-white ${
         isVisible ? 'opacity-100' : '-z-50 opacity-0'
       } transition-opacity duration-300`}
       onClick={scrollToTop}

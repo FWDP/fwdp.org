@@ -25,10 +25,14 @@ const config: Config = {
       palePink: '#FB85D0',
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      spacing: {
+        'offset-vw': 'calc(-40rem + 22vw)',
+      },
+      boxShadow: {
+        'midnightBlue-shadow': '10px 10px 0 0 #0D1950',
+      },
+      height: {
+        content: 'calc(100vh - 4rem)',
       },
     },
   },

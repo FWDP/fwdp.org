@@ -24,7 +24,7 @@ export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
         const isJoinUs = link.name === 'JOIN US';
         const bgColor = isJoinUs ? 'bg-shockingPink px-2 py-[0.45rem]' : '';
         const textColorClass = isJoinUs
-          ? 'text-xl font-normal tracking-wide text-white cursor-pointer'
+          ? 'text-xl font-black tracking-wide text-white cursor-pointer'
           : 'font-semibold tracking-wide text-midnightBlue cursor-pointer';
 
         return (
