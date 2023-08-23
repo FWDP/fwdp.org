@@ -35,8 +35,9 @@ export default function Footer() {
       </div>
 
       <div className='mx-12 my-2 mt-auto h-1 w-full border-t-2 border-[#fff]'></div>
-      <p className='tracking-wide'>
-        Copyright © 2023 Filipino Web Development Peers. All Rights Reserved
+      <p className='text-center tracking-wide'>
+        Copyright <strong>&copy;</strong> 2023 Filipino Web Development Peers.
+        All Rights Reserved
       </p>
     </footer>
   );

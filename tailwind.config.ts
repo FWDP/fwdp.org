@@ -34,7 +34,7 @@ const config: Config = {
         'offset-vw': 'calc(-40rem + 22vw)',
       },
       boxShadow: {
-        'midnightBlue-shadow': '5px 6px 0 1px #0D1950',
+        'midnightBlue-shadow': '10px 10px 0 0 #0D1950',
       },
       height: {
         content: 'calc(100vh - 4rem)',

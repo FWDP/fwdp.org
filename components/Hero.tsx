@@ -26,10 +26,9 @@ export default function Hero() {
 
           {/* about */}
           <p className='mt-8 w-full max-w-xl break-words text-2xl font-semibold  max-sm:max-w-sm md:max-w-xl lg:max-w-[28rem] xl:max-w-xl 2xl:max-w-2xl '>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsum,
-            fugit ab molestias officia earum iure, esse consequuntur eaque quis
-            nisi alias? Nesciunt eaque officiis recusandae debitis fugit culpa
-            rerum?
+            Join our vibrant community of passionate Filipino developers and
+            eager learners as we embark on a journey to supercharge our Web
+            Development skills and beyond!
           </p>
         </div>
       </div>
@@ -39,7 +38,7 @@ export default function Hero() {
           priority
           src='/discord-community-ss.png'
           alt='discord-community-ss'
-          className='  rounded-xl shadow-2xl'
+          className='rounded-xl shadow-2xl'
           fill={true}
           style={{
             objectFit: 'cover',
