@@ -48,6 +48,7 @@ export default function Hero() {
           src="/assets/discord-community-ss.png"
           alt="discord-community-ss"
           className="rounded-xl shadow-2xl"
+          placeholder="blur"
           fill
           style={{
             objectFit: 'cover',

@@ -28,6 +28,7 @@ function ScrollToTopButton() {
   return (
     <button
       onClick={() => scrollToTop}
+      aria-label="Scroll-to-Top"
       type="button"
       className={`fixed bottom-10 right-10 z-50 cursor-pointer rounded-full bg-shockingPink p-2 text-white ${
         isVisible ? 'opacity-100' : '-z-50 opacity-0'
