@@ -14,7 +14,7 @@ export default function MissionVission() {
         <div className='midnightBlue-shadow min-w-xl max-w-2xl border-4 border-midnightBlue p-4 shadow-midnightBlue-shadow'>
           <div className='mb-4 flex items-center justify-center gap-4 text-center text-5xl font-black tracking-widest max-sm:text-4xl'>
             <Image
-              src='/dino-blue.png'
+              src='/assets/dino-blue.png'
               alt='dino-blue'
               height={45}
               width={45}
@@ -40,7 +40,7 @@ export default function MissionVission() {
         <div className='midnightBlue-shadow min-w-xl max-w-2xl border-4 border-midnightBlue p-4 shadow-midnightBlue-shadow'>
           <div className='mb-4 flex items-center justify-center gap-4 text-center text-5xl font-black tracking-widest max-sm:text-4xl'>
             <Image
-              src='/dino-pink.png'
+              src='/assets/dino-pink.png'
               alt='dino-pink'
               height={45}
               width={45}

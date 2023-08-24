@@ -15,7 +15,7 @@ export default function Hero() {
         <div className='flex-1 flex-col'>
           <div className=''>
             <Image
-              src={'/fwdpHero.png'}
+              src={'/assets/fwdpHero.png'}
               alt='fwdpHero'
               width={250}
               height={250}
@@ -51,7 +51,7 @@ export default function Hero() {
       <div className='absolute right-offset-vw hidden h-[500px] w-[1000px] items-end justify-end lg:flex xl:flex-[2]'>
         <Image
           priority
-          src='/discord-community-ss.png'
+          src='/assets/discord-community-ss.png'
           alt='discord-community-ss'
           className='rounded-xl shadow-2xl'
           fill={true}

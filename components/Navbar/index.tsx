@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className='flex items-center gap-1 text-2xl font-bold'>
           <Link href='/'>
             <Image
-              src={'/logo-horizontal.png'}
+              src={'/assets/logo-horizontal.png'}
               loading='lazy'
               alt='FWDP Logo'
               width={190}
