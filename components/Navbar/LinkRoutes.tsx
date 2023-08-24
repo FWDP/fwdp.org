@@ -39,7 +39,12 @@ export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
             tabIndex={0}
           >
             {isJoinUs ? (
-              <a href={link.routeName} target="_blank" className={textColorClass} rel="noreferrer">
+              <a
+                href={link.routeName}
+                target="_blank"
+                className={textColorClass}
+                rel="noopener noreferrer"
+              >
                 {link.name}
               </a>
             ) : (
