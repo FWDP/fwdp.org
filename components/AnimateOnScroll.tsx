@@ -11,7 +11,7 @@ interface Props {
   };
 }
 
-export const AnimateOnScroll = ({ children, animateVariant }: Props) => {
+export default function AnimateOnScroll({ children, animateVariant }: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -27,7 +27,7 @@ export const AnimateOnScroll = ({ children, animateVariant }: Props) => {
     <motion.div
       ref={ref}
       variants={animateVariant}
-      initial='hidden'
+      initial="hidden"
       animate={mainControls}
       transition={{
         ease: 'easeIn',
@@ -38,4 +38,4 @@ export const AnimateOnScroll = ({ children, animateVariant }: Props) => {
       {children}
     </motion.div>
   );
-};
+}

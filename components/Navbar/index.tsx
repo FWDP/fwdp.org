@@ -6,12 +6,12 @@ import { useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-import LinkRoutes from './LinkRoutes';
 import useSetTransparency from '@/hooks/useSetTransparency';
+import LinkRoutes from './LinkRoutes';
 
 export default function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(false),
-    toggleMenuNav = () => setToggleMenu(!toggleMenu);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const toggleMenuNav = () => setToggleMenu(!toggleMenu);
 
   const { isTransparent } = useSetTransparency();
 
@@ -27,12 +27,12 @@ export default function Navbar() {
         }`}
       >
         {/* Logo Section */}
-        <div className='flex items-center gap-1 text-2xl font-bold'>
-          <Link href='/'>
+        <div className="flex items-center gap-1 text-2xl font-bold">
+          <Link href="/">
             <Image
-              src={'/logo-horizontal.png'}
-              loading='lazy'
-              alt='FWDP Logo'
+              src="/assets/logo-horizontal.png"
+              loading="lazy"
+              alt="FWDP Logo"
               width={190}
               height={190}
             />
@@ -41,14 +41,11 @@ export default function Navbar() {
 
         {/* Menu Icon */}
         <button
-          className='absolute right-8 top-6 cursor-pointer md:hidden'
+          type="button"
+          className="absolute right-8 top-6 cursor-pointer md:hidden"
           onClick={() => toggleMenuNav()}
         >
-          {!toggleMenu ? (
-            <RxHamburgerMenu size={28} />
-          ) : (
-            <IoCloseSharp size={28} />
-          )}
+          {!toggleMenu ? <RxHamburgerMenu size={28} /> : <IoCloseSharp size={28} />}
         </button>
 
         {/* Routes */}

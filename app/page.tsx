@@ -5,7 +5,7 @@ import MissionVision from '@/components/MissionVision';
 
 export default function Home() {
   return (
-    <main className='relative min-h-screen bg-primaryColor '>
+    <main className="relative min-h-screen bg-primaryColor">
       {/* Main Hero Section */}
       <Hero />
 

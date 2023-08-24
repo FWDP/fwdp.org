@@ -1,15 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
-const ScrollToTopButton = () => {
+function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () =>
+    const toggleVisibility = () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       window.scrollY > 300 ? setIsVisible(true) : setIsVisible(false);
+    };
 
     window.addEventListener('scroll', toggleVisibility);
 
@@ -24,15 +26,16 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div
+    <button
+      onClick={() => scrollToTop}
+      type="button"
       className={`fixed bottom-10 right-10 z-50 cursor-pointer rounded-full bg-shockingPink p-2 text-white ${
         isVisible ? 'opacity-100' : '-z-50 opacity-0'
       } transition-opacity duration-300`}
-      onClick={scrollToTop}
     >
       <AiOutlineArrowUp size={24} />
-    </div>
+    </button>
   );
-};
+}
 
 export default ScrollToTopButton;

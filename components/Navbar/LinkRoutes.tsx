@@ -4,8 +4,8 @@ type NavLinkType = { name: string; routeName: string };
 type ToggleMenuType = { toggleMenu: boolean };
 
 export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
-  const router = useRouter(),
-    pageLink = (route: NavLinkType['routeName']) => router.push(route);
+  const router = useRouter();
+  const pageLink = (route: NavLinkType['routeName']) => router.push(route);
 
   const navLinks: NavLinkType[] = [
     { name: 'TEAM', routeName: '/team' },
@@ -15,7 +15,7 @@ export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
   ];
 
   return (
-    <ul
+    <div
       className={`absolute left-0 z-[-1] flex w-full flex-col items-center justify-center gap-4 transition-all duration-[400ms] ease-in-out max-md:bg-primaryColor max-md:p-2 max-md:pb-6 md:static md:z-auto md:w-auto md:flex-row md:gap-6 ${
         toggleMenu ? 'top-[74px]' : 'top-[-490px]'
       }`}
@@ -28,25 +28,26 @@ export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
           : 'font-semibold tracking-wide text-midnightBlue cursor-pointer';
 
         return (
-          <li
+          <div
             key={link.name}
             className={bgColor}
             onClick={() => pageLink(link.routeName)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === 'Space') pageLink(link.routeName);
+            }}
+            role="button"
+            tabIndex={0}
           >
             {isJoinUs ? (
-              <a
-                href={link.routeName}
-                target='_blank'
-                className={textColorClass}
-              >
+              <a href={link.routeName} target="_blank" className={textColorClass} rel="noreferrer">
                 {link.name}
               </a>
             ) : (
               <div className={textColorClass}>{link.name}</div>
             )}
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 }
