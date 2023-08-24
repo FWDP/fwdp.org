@@ -1,4 +1,4 @@
-export const partnersLogo = [
+const partnersLogo = [
   { title: 'ACSS', logo: 'acssLogo' },
   { title: 'Aplha', logo: 'alphaLogo' },
   { title: 'BulsuMSC', logo: 'BulsuMSC-LOGO' },
@@ -11,3 +11,5 @@ export const partnersLogo = [
   { title: 'Syntax', logo: 'syntaxLOGO' },
   { title: 'UXPH', logo: 'UXPH-LOGO' },
 ];
+
+export default partnersLogo;

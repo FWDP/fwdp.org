@@ -1,12 +1,8 @@
 import { IoLogoGithub } from 'react-icons/io5';
 import { TbBrandFacebookFilled } from 'react-icons/tb';
-import {
-  PiDiscordLogoFill,
-  PiLinkedinLogoFill,
-  PiYoutubeLogoFill,
-} from 'react-icons/pi';
+import { PiDiscordLogoFill, PiLinkedinLogoFill, PiYoutubeLogoFill } from 'react-icons/pi';
 
-export const socialLink = [
+const socialLink = [
   {
     name: 'github',
     link: 'https://github.com/FWDP',
@@ -38,3 +34,5 @@ export const socialLink = [
     icon: <PiYoutubeLogoFill size={40} />,
   },
 ];
+
+export default socialLink;

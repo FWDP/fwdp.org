@@ -4,6 +4,7 @@ import './globals.css';
 
 import Navbar from '@/components/Navbar';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
+import { childrenProps } from '@/globalTypes';
 
 const tommorow = Tomorrow({
   subsets: ['latin'],
@@ -24,13 +25,11 @@ export const metadata: Metadata = {
   themeColor: '#f5e6e0',
 };
 
-type childrenProps = { children: React.ReactNode };
-
 export default function RootLayout({ children }: childrenProps) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head>
-        <link rel='icon' href='./fwdpIcon.png' sizes='any' />
+        <link rel="icon" href="./fwdpIcon.png" sizes="any" />
       </head>
       <body className={tommorow.className}>
         <Navbar />

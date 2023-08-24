@@ -1,7 +1,28 @@
 {
-	"extends": ["next/core-web-vitals", "next", "prettier"],
-	"rules": {
-		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn"
-	}
+  "extends": [
+    "next/core-web-vitals",
+    "next",
+    "prettier",
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime" // Disallow missing React when using JSX
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "typeAlias",
+        "format": ["camelCase", "PascalCase"]
+      }
+    ]
+  }
 }
