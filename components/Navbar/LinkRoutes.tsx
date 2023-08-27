@@ -1,58 +1,54 @@
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
-type NavLinkType = { name: string; routeName: string };
+const navLinks = [
+  { name: 'TEAM', routeName: '/team' },
+  { name: 'ABOUT', routeName: '/about' },
+  { name: 'PROJECTS', routeName: '/projects' },
+  { name: 'JOIN US', routeName: 'https://github.com/FWDP' },
+];
+
+type NavLinkType = (typeof navLinks)[number]['routeName'];
 type ToggleMenuType = { toggleMenu: boolean };
 
 export default function LinkRoutes({ toggleMenu }: ToggleMenuType) {
   const router = useRouter();
-  const pageLink = (route: NavLinkType['routeName']) => router.push(route);
-
-  const navLinks: NavLinkType[] = [
-    { name: 'TEAM', routeName: '/team' },
-    { name: 'ABOUT', routeName: '/about' },
-    { name: 'PROJECTS', routeName: '/projects' },
-    { name: 'JOIN US', routeName: 'https://github.com/FWDP' },
-  ];
+  const pageLink = (route: NavLinkType) => router.push(route);
 
   return (
-    <div
-      className={`absolute left-0 z-[-1] flex w-full flex-col items-center justify-center gap-4 transition-all duration-[400ms] ease-in-out max-md:bg-primaryColor max-md:p-2 max-md:pb-6 md:static md:z-auto md:w-auto md:flex-row md:gap-6 ${
-        toggleMenu ? 'top-[74px]' : 'top-[-490px]'
-      }`}
+    <section
+      className={`absolute bottom-0 left-0 flex flex-col items-center gap-6 bg-primaryColor max-md:-z-10 max-md:w-full max-md:py-4 md:static md:h-full md:flex-row ${
+        toggleMenu
+          ? 'transition-all duration-[400ms] ease-in-out max-md:translate-y-[99%] max-md:shadow-md'
+          : 'transition-all duration-[400ms] ease-in-out max-md:translate-y-[-100%]'
+      } `}
     >
-      {navLinks.map((link) => {
-        const isJoinUs = link.name === 'JOIN US';
-        const bgColor = isJoinUs ? 'bg-shockingPink px-2 py-[0.45rem]' : '';
-        const textColorClass = isJoinUs
-          ? 'text-xl font-black tracking-wide text-white cursor-pointer'
-          : 'font-semibold tracking-wide text-midnightBlue cursor-pointer';
-
+      {navLinks.slice(0, -1).map((link) => {
         return (
-          <div
+          <Link
             key={link.name}
-            className={bgColor}
             onClick={() => pageLink(link.routeName)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === 'Space') pageLink(link.routeName);
             }}
             role="button"
             tabIndex={0}
+            href={link.routeName}
+            className="group relative cursor-pointer p-2 font-semibold tracking-wide text-midnightBlue transition-all duration-100 ease-in-out hover:text-shockingPink"
+            rel="noopener noreferrer"
           >
-            {isJoinUs ? (
-              <a
-                href={link.routeName}
-                target="_blank"
-                className={textColorClass}
-                rel="noopener noreferrer"
-              >
-                {link.name}
-              </a>
-            ) : (
-              <div className={textColorClass}>{link.name}</div>
-            )}
-          </div>
+            {link.name}
+            <div className="bg-blue-500 absolute inset-x-0 bottom-0 h-1 scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100 group-hover:bg-shockingPink"></div>
+          </Link>
         );
       })}
-    </div>
+      <a
+        target="_blank"
+        href={navLinks[navLinks.length - 1].routeName}
+        className="cursor-pointer border-2 border-shockingPink bg-shockingPink p-[0.4rem] text-xl font-black tracking-wide text-white transition-all duration-100 hover:bg-primaryColor hover:text-shockingPink"
+      >
+        JOIN US
+      </a>
+    </section>
   );
 }
