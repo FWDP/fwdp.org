@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import AnimateOnScroll from './AnimateOnScroll';
+import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 export default function MissionVission() {
   return (

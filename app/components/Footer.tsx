@@ -1,7 +1,7 @@
 import { IoLogoGithub } from 'react-icons/io5';
 import { TbBrandFacebookFilled } from 'react-icons/tb';
 import { PiDiscordLogoFill, PiLinkedinLogoFill, PiYoutubeLogoFill } from 'react-icons/pi';
-import socialLink from '../constants/socialLinks';
+import socialLink from '../../constants/socialLinks';
 
 const Icons = [
   <IoLogoGithub key={0} />,

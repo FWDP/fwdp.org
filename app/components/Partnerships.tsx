@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import partnersLogo from '@/constants/partnersLogo';
-import AnimateOnScroll from './AnimateOnScroll';
+import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 export default function Partnerships() {
   return (
