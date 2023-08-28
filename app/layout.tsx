@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Tomorrow } from 'next/font/google';
 import './globals.css';
 
-import Navbar from '@/components/Navbar';
+import Navbar from '@/app/components/Navbar';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import { childrenProps } from '@/globalTypes';
 

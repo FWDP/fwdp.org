@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import SocialLinks from './SocialLinks';
-
-import AnimateOnScroll from './AnimateOnScroll';
+import AnimateOnScroll from '@/components/AnimateOnScroll';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Hero() {
   return (
@@ -13,9 +12,7 @@ export default function Hero() {
         }}
       >
         <div className="flex-1 flex-col">
-          <div className="">
-            <Image src="/assets/fwdpHero.png" alt="fwdpHero" width={250} height={250} />
-          </div>
+          <Image src="/assets/fwdpHero.png" alt="fwdpHero" width={250} height={250} />
 
           <div className="mb-2 flex max-w-[700px] flex-col text-7xl max-sm:text-4xl lg:text-[3.3rem] xl:text-[5rem] 2xl:text-[6rem]">
             <span className="w-max bg-shockingPink p-3 pr-8 text-[1em] text-white">
