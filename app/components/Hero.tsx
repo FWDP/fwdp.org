@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import SocialLinks from '../../components/SocialLinks';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Hero() {
   return (

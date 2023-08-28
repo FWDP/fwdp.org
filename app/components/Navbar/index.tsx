@@ -13,10 +13,8 @@ export default function Navbar() {
   const toggleMenuNav = () => setToggleMenu(!toggleMenu);
 
   return (
-    <nav className={`sticky left-0 top-0 z-30`}>
-      <div
-        className={`relative flex w-full items-center justify-between gap-4 bg-primaryColor px-8 py-4`}
-      >
+    <nav className="sticky left-0 top-0 z-30">
+      <div className="relative flex w-full items-center justify-between gap-4 bg-primaryColor px-8 py-4">
         <Link href="/">
           <Image
             src="/assets/logo-horizontal.png"
