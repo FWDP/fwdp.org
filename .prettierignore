@@ -1,0 +1,46 @@
+# Ignore build output directories
+.next/
+out/
+public/
+
+# Ignore generated files
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore logs and temporary files
+logs/
+.npm/
+.yarn/
+
+# Ignore version control files
+.git/
+.gitignore/
+.github/
+
+# Ignore package manager files
+node_modules/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore OS-specific and editor-specific files
+.DS_Store
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Ignore specific JSON files
+prettier.json
+manifest.json
+package.json
+package-lock.json
+postcss.config.json
+public/manifest.json
